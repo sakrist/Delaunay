@@ -1,4 +1,5 @@
 ![](https://github.com/sakrist/Delaunay/workflows/Swift/badge.svg)
+[![codecov](https://codecov.io/gh/sakrist/Delaunay/branch/main/graph/badge.svg?token=WVCP5IQZG8)](https://codecov.io/gh/sakrist/Delaunay)
 
 ### Delaunay Triangulation
 Delaunay Triangulation implementation written with swift [https://en.wikipedia.org/wiki/Delaunay_triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
