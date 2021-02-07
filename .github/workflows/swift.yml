@@ -32,3 +32,5 @@ jobs:
       run: swift build
     - name: Run tests
       run: swift test --enable-code-coverage
+    - name: Post Codecov report
+      run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
