@@ -1,13 +1,14 @@
-# Delaunay Triangulation
-Delaunay Triangulation implementation written in swift [https://en.wikipedia.org/wiki/Delaunay_triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+![](https://github.com/sakrist/Delaunay/workflows/Swift/badge.svg)
 
----
+### Delaunay Triangulation
+Delaunay Triangulation implementation written with swift [https://en.wikipedia.org/wiki/Delaunay_triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 
 ### Usage
 
 Create array of `Vertex`. 
-For `CDT` vertices must be sorted and validated. I.e. sorted into closed polygon. 
-Duplicates will be deleted inside of the algorithm.
+
+Using `CDT` vertices must be sorted and validated. I.e. sorted into closed polygon. 
+Duplicates will be deleted by internal algorithm.
 By default `index` of the `Vertex` is `-1`. For `CDT`, index must be set in same order as in polygon . 
 
 #### Constrained Delaunay Triangulation
