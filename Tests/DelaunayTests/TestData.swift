@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import GameplayKit
 import Delaunay
 
 struct Size {

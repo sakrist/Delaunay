@@ -29,6 +29,6 @@ jobs:
           restore-keys: |
             ${{runner.os}}-${{github.repository}}-spm-
     - name: Build
-      run: swift build -v
+      run: swift build
     - name: Run tests
-      run: swift test -v
+      run: swift test --enable-code-coverage
