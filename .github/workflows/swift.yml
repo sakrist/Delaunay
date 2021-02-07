@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Install Swift
-      if: runner.os == 'Linux'
+      if: matrix.os == 'ubuntu-20.04'
       uses: sersoft-gmbh/SwiftyActions@v1
       with:
           release-version: 5.3.2
@@ -33,4 +33,5 @@ jobs:
     - name: Run tests
       run: swift test --enable-code-coverage
     - name: Post Codecov report
+      if: matrix.os == 'macos-latest'
       run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
