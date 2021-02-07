@@ -7,15 +7,14 @@
 //
 //  Improved and Extended by Volodymyr Boichentsov on 14/11/2017
 
-import Darwin
 import Foundation
 
 // Original
 // http://paulbourke.net/papers/triangulate/
 
-open class Delaunay : NSObject {
+public class Delaunay  {
     
-    public override init() { }
+    public init() { }
     
     /* Generates a supertraingle containing all other triangles */
     fileprivate func supertriangle(_ vertices: [Point]) -> [Point] {
@@ -67,7 +66,7 @@ open class Delaunay : NSObject {
         }
     }
     
-    func _removeDuplicates(_ vertices: [Point]) -> [Point] {
+    internal func _removeDuplicates(_ vertices: [Point]) -> [Point] {
         var _vertices = Array(Set(vertices))
         _vertices.sort { (p1, p2) -> Bool in
             return p1.index < p2.index
@@ -75,7 +74,7 @@ open class Delaunay : NSObject {
         return _vertices
     }
     
-    open func triangulate(_ vertices: [Point]) -> [Triangle] {
+    public func triangulate(_ vertices: [Point]) -> [Triangle] {
 
         var _vertices = _removeDuplicates(vertices) 
         

@@ -28,7 +28,9 @@ class ViewController: NSViewController {
     }
 
     func triangleTest2() {
-        let vertices = generateVertices(self.view.frame.size, cellSize: 10)
+        let size = Size( Double(self.view.frame.size.width), 
+                         Double(self.view.frame.size.height))
+        let vertices = generateVertices(size, cellSize: 30)
         print("vertices.count ", vertices.count)
         let start = Date().timeIntervalSince1970
         let triangles = Delaunay().triangulate(vertices)
@@ -41,7 +43,7 @@ class ViewController: NSViewController {
     
     func triangleTest() {
         
-        let vertices_v = generateVertices()
+        let vertices_v = generatedTestVertices()
         var vertices = [Point]()
         var index = 0
         let count = vertices_v.count

@@ -20,7 +20,25 @@
 
 import Delaunay
 
+extension Point {
+    public func pointValue() -> CGPoint {
+        return CGPoint(x: x, y: y)
+    }
+}
+
 extension Triangle {
+    func v1() -> CGPoint {
+        return point1.pointValue()
+    }
+    
+    func v2() -> CGPoint {
+        return point2.pointValue()
+    }
+    
+    func v3() -> CGPoint {
+        return point3.pointValue()
+    }
+    
     func toPath() -> CGPath {
         
         let path = CGMutablePath()
@@ -39,26 +57,11 @@ extension Triangle {
     }
 }
 
-
-extension Double {
-    static func random() -> Double {
-        return Double(arc4random()) / 0xFFFFffff
-    }
-    
-    static func random(_ min: Double, _ max: Double) -> Double {
-        return Double.random() * (max - min) + min
-    }
-}
-
-extension CGFloat {
-    static func random(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
-        return CGFloat(Double.random(Double(min), Double(max)))
-    }
-}
-
 extension OSColor {
+    
     static func randomColor() -> OSColor {
-        let hue = CGFloat( Double.random() )  // 0.0 to 1.0
+        let range:Range<CGFloat> = Range<CGFloat>(uncheckedBounds: (lower: 0.0, upper: 1.0))
+        let hue = CGFloat.random(in: range) // 0.0 to 1.0
         let saturation: CGFloat = 0.5  // 0.5 to 1.0, away from white
         let brightness: CGFloat = 1.0  // 0.5 to 1.0, away from black
         let color = OSColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)

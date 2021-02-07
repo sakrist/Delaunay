@@ -17,11 +17,9 @@ class DelaunayTriangulationSwiftTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.vertices = generateVertices(CGSize.init(width: 480, height: 480), cellSize: 15)
-        print("vertices.count ",vertices.count)
+        self.vertices = generateVertices(Size(480, 480), cellSize: 15)        
         
-        
-        var vertices_v = generateVertices()
+        let vertices_v = generatedTestVertices()
         vertices2 = [Point]()
         var index = 0
         let count = vertices_v.count
@@ -48,7 +46,7 @@ class DelaunayTriangulationSwiftTests: XCTestCase {
     
     func testDelaunay() {
         
-        var vertices = generateVertices()
+        var vertices = generatedTestVertices()
         var index = 0
         for i in 0..<vertices.count {
             vertices[i].index = index

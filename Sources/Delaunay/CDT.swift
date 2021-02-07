@@ -10,13 +10,13 @@ import Foundation
 
 
 /// Simply applying Constraines on result of Delauney Triangulation.  
-open class CDT : Delaunay {
+public class CDT : Delaunay {
     
-    override open func triangulate(_ vertices: [Point]) -> [Triangle] {
+    override public func triangulate(_ vertices: [Point]) -> [Triangle] {
         return self.triangulate(vertices, nil)
     }
     
-    open func triangulate(_ vertices: [Point], _ holesVertices:[[Point]]?) -> [Triangle] {
+    public func triangulate(_ vertices: [Point], _ holesVertices:[[Point]]?) -> [Triangle] {
         
         var verticesCopy = vertices
         var holes = [Polygon]()

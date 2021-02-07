@@ -21,8 +21,8 @@
 		D204F7911FBA651A0087FB56 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B5BFF1C3FFF49006B601E /* Utilities.swift */; };
 		D20AC48725CF6F6D00A0D77B /* Delaunay in Frameworks */ = {isa = PBXBuildFile; productRef = D20AC48625CF6F6D00A0D77B /* Delaunay */; };
 		D20AC48925CF6F7400A0D77B /* Delaunay in Frameworks */ = {isa = PBXBuildFile; productRef = D20AC48825CF6F7400A0D77B /* Delaunay */; };
-		D2E7B8551FBBB12C00EFAA70 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B8521FBBB12600EFAA70 /* TestData.swift */; };
-		D2E7B8561FBBB12D00EFAA70 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7B8521FBBB12600EFAA70 /* TestData.swift */; };
+		D20AC4C525CFF9AF00A0D77B /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC4C425CFF9AF00A0D77B /* TestData.swift */; };
+		D20AC4C625CFF9AF00A0D77B /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC4C425CFF9AF00A0D77B /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,8 +55,8 @@
 		D204F7861FBA64480087FB56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D204F7881FBA64480087FB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D204F7891FBA64480087FB56 /* TriangulationTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TriangulationTest.entitlements; sourceTree = "<group>"; };
-		D20AC48325CF6F4700A0D77B /* Delaunay */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Delaunay; sourceTree = "<group>"; };
-		D2E7B8521FBBB12600EFAA70 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		D20AC48325CF6F4700A0D77B /*  */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ""; sourceTree = "<group>"; };
+		D20AC4C425CFF9AF00A0D77B /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = Tests/DelaunayTests/TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,8 @@
 		C41B5BB71C3FF148006B601E = {
 			isa = PBXGroup;
 			children = (
+				C41B5BFF1C3FFF49006B601E /* Utilities.swift */,
+				D20AC4C425CFF9AF00A0D77B /* TestData.swift */,
 				C41B5BEA1C3FFDF8006B601E /* TriangulationTest iOS */,
 				D204F77E1FBA64480087FB56 /* TriangulationTest macOS */,
 				C41B5BC21C3FF148006B601E /* Products */,
@@ -104,8 +106,6 @@
 				C41B5BEB1C3FFDF8006B601E /* AppDelegate.swift */,
 				C41B5BED1C3FFDF8006B601E /* ViewController.swift */,
 				C41B5BFD1C3FFF1E006B601E /* TriangleView.swift */,
-				C41B5BFF1C3FFF49006B601E /* Utilities.swift */,
-				D2E7B8521FBBB12600EFAA70 /* TestData.swift */,
 				C41B5BFC1C3FFE3C006B601E /* Supporting Files */,
 			);
 			name = "TriangulationTest iOS";
@@ -139,7 +139,7 @@
 		D204F78F1FBA64EC0087FB56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D20AC48325CF6F4700A0D77B /* Delaunay */,
+				D20AC48325CF6F4700A0D77B /*  */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 				C41B5BEE1C3FFDF8006B601E /* ViewController.swift in Sources */,
 				C41B5C011C4001A2006B601E /* TriangleView.swift in Sources */,
 				C41B5C021C4001A2006B601E /* Utilities.swift in Sources */,
-				D2E7B8561FBBB12D00EFAA70 /* TestData.swift in Sources */,
+				D20AC4C525CFF9AF00A0D77B /* TestData.swift in Sources */,
 				C41B5BEC1C3FFDF8006B601E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +273,7 @@
 				D204F7911FBA651A0087FB56 /* Utilities.swift in Sources */,
 				D204F7821FBA64480087FB56 /* ViewController.swift in Sources */,
 				D204F7801FBA64480087FB56 /* AppDelegate.swift in Sources */,
-				D2E7B8551FBBB12C00EFAA70 /* TestData.swift in Sources */,
+				D20AC4C625CFF9AF00A0D77B /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

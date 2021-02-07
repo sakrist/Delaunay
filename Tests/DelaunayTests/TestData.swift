@@ -10,8 +10,19 @@ import Foundation
 import GameplayKit
 import Delaunay
 
+struct Size {
+    public var width: Double
+    public var height: Double
+    public init(_ _width: Double, _ _height: Double) {
+        width = _width
+        height = _height
+    } 
+}
+
 /// Generate set of vertices for our triangulation to use
-func generateVertices(_ size: CGSize, cellSize: CGFloat, variance: CGFloat = 0.75, seed: UInt64 = numericCast(arc4random())) -> [Point] {
+func generateVertices(_ size: Size, 
+                      cellSize: Double, 
+                      variance: Double = 0.75 ) -> [Point] {
     
     // How many cells we're going to have on each axis (pad by 2 cells on each edge)
     let cellsX = (size.width + 4 * cellSize) / cellSize
@@ -29,13 +40,16 @@ func generateVertices(_ size: CGSize, cellSize: CGFloat, variance: CGFloat = 0.7
     let minY = -bleedY
     let maxY = size.height + bleedY
     
-    let generator = GKLinearCongruentialRandomSource(seed: seed)
+    let rangeSeed:Range<Double> = Range<Double>(uncheckedBounds: (lower: 0.0, upper: 1.0))
+    
     var index:Int = 0
+    let range:Range<Double> = Range<Double>(uncheckedBounds: (lower: -_variance, upper: _variance))
+    
     for i in stride(from: minX, to: maxX, by: cellSize) {
         for j in stride(from: minY, to: maxY, by: cellSize) {
             
-            let x = i + cellSize/2 + CGFloat(generator.nextUniform()) + CGFloat.random(-_variance, _variance)
-            let y = j + cellSize/2 + CGFloat(generator.nextUniform()) + CGFloat.random(-_variance, _variance)
+            let x = i + cellSize/2 + Double.random(in: rangeSeed) + Double.random(in: range)
+            let y = j + cellSize/2 + Double.random(in: rangeSeed) + Double.random(in: range)
             
             points.append(Point(x: Double(x), y: Double(y), i:index))
             
@@ -47,7 +61,7 @@ func generateVertices(_ size: CGSize, cellSize: CGFloat, variance: CGFloat = 0.7
 }
 
 
-func generateVertices() -> [Point] {
+func generatedTestVertices() -> [Point] {
     
     let points = [
         Point(x: 355.230469, y: 297.437500),

@@ -39,8 +39,9 @@ class TriangleView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        let vertices = generateVertices(bounds.size, cellSize: 80)
+        let size = Size( Double(bounds.width), 
+                         Double(bounds.height))
+        let vertices = generateVertices(size, cellSize: 80)
 
         let start = Date().timeIntervalSince1970
 

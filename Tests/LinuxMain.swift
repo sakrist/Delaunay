@@ -3,5 +3,6 @@ import XCTest
 import DelaunayTests
 
 var tests = [XCTestCaseEntry]()
-tests += DelaunayTests.allTests()
+tests += DelaunayTests.__allTests()
+
 XCTMain(tests)

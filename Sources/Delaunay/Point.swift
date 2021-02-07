@@ -6,7 +6,7 @@
 //  Copyright © 2017 sakrist. All rights reserved.
 //
 
-import CoreGraphics
+import Foundation
 
 /// A structure that contains a point in a two-dimensional coordinate system.
 public struct Point : Hashable {
@@ -59,10 +59,6 @@ public struct Point : Hashable {
     
     public func cross(_ point:Point) -> Double {
         return x * point.y - y * point.x
-    }
-    
-    public func pointValue() -> CGPoint {
-        return CGPoint(x: x, y: y)
     }
     
     public func hash(into hasher: inout Hasher) {
