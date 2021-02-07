@@ -33,6 +33,9 @@ jobs:
     - name: Run tests
       run: swift test --enable-code-coverage
     - name: Post Codecov report
-      if: matrix.os == 'macos-latest'
+      if: matrix.os == 'ubuntu-20.04'
       run: llvm-cov export -format="lcov" .build/debug/DelaunayPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
-bash <(curl https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+    - name: Upload Codecov report
+      if: matrix.os == 'ubuntu-20.04'
+      run: bash <(curl https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+    
