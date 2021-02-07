@@ -1,0 +1,11 @@
+# Xcode
+#
+build/
+*.xcuserstate
+
+.DS_Store
+/.build
+/Packages
+xcuserdata/
+
+.swiftpm
