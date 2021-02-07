@@ -20,10 +20,13 @@ class EquatableTests: XCTestCase {
     }
     
     func testVertexEqual() {
+        
+        let range:Range<Double> = Range<Double>(uncheckedBounds: (lower: -1000.0, upper: 1000.0))
+
         for _ in 0..<1000 {
             
-            let x:Double = Double(arc4random()) * 0.000001
-            let y:Double = Double(arc4random()) * 0.000001
+            let x:Double = Double.random(in: range) * 0.000001
+            let y:Double = Double.random(in: range) * 0.000001
             
             let v1 = Point(x: x, y: y)
             let v2 = Point(x: x, y: y)
@@ -33,10 +36,13 @@ class EquatableTests: XCTestCase {
     }
     
     func testVertexNotEqual() {
+        
+        let range:Range<Double> = Range<Double>(uncheckedBounds: (lower: -1000.0, upper: 1000.0))
+        
         for _ in 0..<1000 {
         
-            var x:Double = Double(arc4random())
-            let y:Double = Double(arc4random())
+            var x:Double = Double.random(in: range)
+            let y:Double = Double.random(in: range)
             if x == y {
                 x = x - 1.0
             }
